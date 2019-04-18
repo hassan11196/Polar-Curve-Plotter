@@ -1,0 +1,37 @@
+# -*- mode: python -*-
+
+block_cipher = None
+
+import sys
+sys.setrecursionlimit(5000)
+block_cipher = None
+
+
+a = Analysis(['PolarCurvePlotProject_v2.py'],
+             pathex=['C:\\Users\\M.Hassan Ahmed\\Desktop\\Programs\\C++\\GUI\\qt\\python\\PolarCurvePlotProject_v2.0'],
+             binaries=[],
+             datas=[],
+             hiddenimports=[],
+             hookspath=[],
+             runtime_hooks=[],
+             excludes=[],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher)
+pyz = PYZ(a.pure, a.zipped_data,
+             cipher=block_cipher)
+exe = EXE(pyz,
+          a.scripts,
+          exclude_binaries=True,
+          name='PolarCurvePlotProject_v2',
+          debug=False,
+          strip=False,
+          upx=True,
+          console=True )
+coll = COLLECT(exe,
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               strip=False,
+               upx=True,
+               name='PolarCurvePlotProject_v2')
